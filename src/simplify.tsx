@@ -18,8 +18,16 @@ interface Preferences {
   apiKey: string;
 }
 
-const SYSTEM_PROMPT =
-  "Simplify the text the user gives you. Keep sentences short. One thought per sentence. Cut extra words. Use active voice. Simple and clear English only. Return only the simplified text. No preamble, no explanation.";
+const SYSTEM_PROMPT = `Rewrite the user's text to be shorter and clearer.
+
+Rules:
+- Output must be the same length as the input or shorter — never longer. If you cannot make it shorter while preserving meaning, return the input unchanged.
+- Preserve labels, tags, prefixes, names, and identifiers exactly. Examples: "Rush -", "[BUG]", proper nouns, ticket numbers, version numbers, code identifiers.
+- Don't add information, context, explanations, or speculation that wasn't in the original.
+- Use active voice and plain English. Cut filler.
+- Don't split one sentence into multiple unless splitting also shortens the total length.
+
+Return only the rewritten text. No preamble, no commentary.`;
 
 export default function Command() {
   const [simplified, setSimplified] = useState("");
