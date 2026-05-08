@@ -1,0 +1,45 @@
+{
+  "name": "text-simplifier",
+  "title": "Text Simplifier",
+  "description": "Simplify selected text using Claude AI",
+  "icon": "icon.png",
+  "author": "your-raycast-username",
+  "categories": ["Productivity"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "simplify",
+      "title": "Simplify Text",
+      "description": "Simplify highlighted text with Claude",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "Anthropic API Key",
+      "description": "Your Anthropic API key from console.anthropic.com",
+      "type": "password",
+      "required": true
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.84.0",
+    "@raycast/utils": "^1.17.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix"
+  }
+}
