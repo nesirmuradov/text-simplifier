@@ -3,8 +3,10 @@
   "title": "Text Simplifier",
   "description": "Simplify selected text using Claude AI",
   "icon": "icon.png",
-  "author": "your-raycast-username",
-  "categories": ["Productivity"],
+  "author": "nesirmuradov",
+  "categories": [
+    "Productivity"
+  ],
   "license": "MIT",
   "commands": [
     {
@@ -28,7 +30,7 @@
     "@raycast/utils": "^1.17.0"
   },
   "devDependencies": {
-    "@raycast/eslint-config": "^1.0.11",
+    "@raycast/eslint-config": "^2.1.1",
     "@types/node": "^20.11.0",
     "@types/react": "^18.3.3",
     "eslint": "^8.57.0",

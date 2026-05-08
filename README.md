@@ -4,11 +4,22 @@ A Raycast extension that simplifies highlighted text using Claude. Highlight any
 
 ## Prerequisites
 
-- macOS with [Raycast](https://raycast.com/) installed
-- Node.js 18+ (`brew install node`)
-- An [Anthropic API key](https://console.anthropic.com/) (each user needs their own)
+- macOS
+- [Raycast](https://raycast.com/) — `brew install --cask raycast` (or download from the website)
+- Node.js 18+ — `brew install node`
+- An [Anthropic API key](https://console.anthropic.com/) — each user needs their own
 
 ## Install
+
+If you don't have Raycast and Node yet:
+
+```sh
+brew install --cask raycast
+brew install node
+open -a Raycast   # launch Raycast at least once
+```
+
+Then clone and run:
 
 ```sh
 git clone https://github.com/nesirmuradov/text-simplifier.git
