@@ -30,6 +30,7 @@ Rules:
 Return only the rewritten text. No preamble, no commentary.`;
 
 export default function Command() {
+  const [input, setInput] = useState("");
   const [simplified, setSimplified] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -54,6 +55,8 @@ export default function Command() {
         setIsLoading(false);
         return;
       }
+
+      setInput(selectedText.trim());
 
       const response = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
@@ -122,7 +125,7 @@ export default function Command() {
     <Detail
       isLoading={isLoading}
       navigationTitle="Simplified Text"
-      markdown={simplified}
+      markdown={renderMarkdown(input, simplified)}
       actions={
         <ActionPanel>
           <Action
@@ -141,6 +144,15 @@ export default function Command() {
       }
     />
   );
+}
+
+function renderMarkdown(input: string, simplified: string): string {
+  if (!input) return simplified;
+  const quoted = input
+    .split("\n")
+    .map((line) => `> ${line}`)
+    .join("\n");
+  return `> **Input:**\n${quoted}\n\n---\n\n${simplified}`;
 }
 
 async function replaceSelection(text: string) {
